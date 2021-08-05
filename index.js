@@ -1,15 +1,7 @@
 const taskContainer = document.querySelector(".task__container");
-const saveChanges = () => {
-    const taskData = {
-        id: `${Date.now()}`,
-        imageUrl: document.getElementById("imageUrl").value,
-        taskTitle: document.getElementById("tasktitle").value,
-        taskType: document.getElementById("TaskType").value,
-        taskDescription: document.getElementById("taskDescription").value,
-    };
-    console.log(taskData);
-    const newCard = `
-    <div class="col-md-6 col-lg-4 id=${taskData.id}">
+
+const createNewCard = (taskData) =>
+    `<div class="col-md-6 col-lg-4 id=${taskData.id}">
         <div class="card">
             <div class="card-header d-flex justify-content-end gap-2">
             <button type="button" class="btn btn-outline-success">
@@ -34,7 +26,16 @@ const saveChanges = () => {
             </div>
         </div>
     </div>
-    `;
+`;
 
-    taskContainer.insertAdjacentHTML("beforeend",newCard);
+const saveChanges = () => {
+    const taskData = {
+        id: `${Date.now()}`,
+        imageUrl: document.getElementById("imageUrl").value,
+        taskTitle: document.getElementById("tasktitle").value,
+        taskType: document.getElementById("TaskType").value,
+        taskDescription: document.getElementById("taskDescription").value,
+    };
+
+    taskContainer.insertAdjacentHTML("beforeend",createNewCard(taskData));
 };
