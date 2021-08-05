@@ -33,6 +33,59 @@
     <title>Tasky</title>
 </head>
 <body>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add New Task</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="imageUrl" class="form-label">Image URL</label>
+            <input 
+              type="url" 
+              class="form-control" 
+              id="imageUrl" 
+              aria-describedby="Image url" 
+              placeholder="eg: https://example.com/image.jpg">
+          </div>
+          <div class="mb-3">
+            <label for="tasktitle" class="form-label">Task Title</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="tasktitle" 
+              aria-describedby="Task title" 
+              placeholder="eg: API Integration">
+          </div>
+          <div class="mb-3">
+            <label for="TaskType" class="form-label">Task Type</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="TaskType" 
+              aria-describedby="Task type"
+              placeholder="eg: Work">
+          </div>
+          <div class="mb-3">
+            <label for="taskDescription" class="form-label">Task Description</label>
+            <textarea 
+              rows="5" 
+              class="form-control" 
+              id="taskDescription" 
+              aria-describedby="Task Description"
+              placeholder="Describe your work in detail"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -53,7 +106,7 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
             </ul>
-            <button type="button" class="btn btn-primary"><i class="fas fa-plus"></i> Add New</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus"></i> Add New</button>
           </div>
         </div>
     </nav>
